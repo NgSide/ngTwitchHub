@@ -10,6 +10,7 @@ export class PictureComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
