@@ -7,7 +7,7 @@ import { ApiService } from '../service/api.service';
   styleUrls: ['./list-channels.component.css'],
 })
 export class ListChannelsComponent implements OnInit {
-  private _streams: [];
+  private _streams: any;
   constructor(private _apiService: ApiService) {}
 
   ngOnInit() {
@@ -15,6 +15,12 @@ export class ListChannelsComponent implements OnInit {
   }
 
   getStreamHomePage() {
-    return this._apiService.getStreams();
+    this._streams = this._apiService.getStreams();
+    console.log(this._streams);
+    return this._streams;
+  }
+
+  streams() {
+    return this._streams;
   }
 }
