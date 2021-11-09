@@ -8,17 +8,19 @@ import { ApiService } from '../service/api.service';
 })
 export class ListChannelsComponent implements OnInit {
   private _streams: any;
-  constructor(private _apiService: ApiService) {}
+
+  constructor() {}
 
   ngOnInit() {
-    this.getStreamHomePage();
+    // this.getStreamHomePage();
   }
 
-  getStreamHomePage() {
-    this._streams = this._apiService.getStreams();
-    console.log(this._streams);
-    return this._streams;
-  }
+  // getStreamHomePage() {
+  //   this._streams = this._apiService.getStreams();
+  //   console.log('this._streams');
+  //   console.log(this._streams);
+  //   return this._streams;
+  // }
 
   streams() {
     return this._streams;
