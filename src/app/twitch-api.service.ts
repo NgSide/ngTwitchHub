@@ -17,3 +17,4 @@ export class TwitchApiService {
     return this.http.get<Live[]>(STREAM_LIST);
   }
 }
+ 
