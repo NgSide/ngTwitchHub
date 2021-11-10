@@ -2,7 +2,7 @@
 <p>
   Start editing to see some magic happen :)
 </p>
-<div *ngFor="let item of streams">
+<div *ngFor="let item of findStreams$ |async">
   <img width="400" height="200" [src]="getImg(item)"/>
   <p><strong> {{item.title}}</strong></p>
   <p>{{item.user_name}}</p>

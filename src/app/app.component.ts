@@ -1,4 +1,5 @@
 import { Component, OnInit, VERSION } from '@angular/core';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { StreamModel } from './models/stream.model';
 import { TwitchService } from './services/twitch.service';
@@ -12,18 +13,19 @@ export class AppComponent implements OnInit  {
   name = 'Kevin Mrl- Angular ' + VERSION.major;
 
 streams: StreamModel[];
-
+findStreams$: Observable<StreamModel[]>;
   constructor(private readonly twitchService: TwitchService) {
 
   }
 
   ngOnInit() {
     
+    this.findStreams$ = this.twitchService.getHelixStreams();
       //utiliser map
-    this.twitchService.getHelixStreams().subscribe((streams: any) => {
-      this.streams = streams;
-      console.log(this.streams);
-    });
+    //this.twitchService.getHelixStreams().subscribe((streams: any) => {
+      //this.streams = streams;
+      //console.log(this.streams);
+    //});
   }
 
   getImg(item) {

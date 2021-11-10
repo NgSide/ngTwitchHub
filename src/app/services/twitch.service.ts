@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Api } from './api';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { StreamModel } from '../models/stream.model';
 import { StreamerModel } from '../models/streamer.model';
@@ -10,9 +10,12 @@ export class TwitchService {
 
   constructor(private readonly api: Api) { }
 
-  getHelixStreams(): Observable<StreamModel> {
+  getHelixStreams(): Observable<StreamModel[]> {
       return this.api.get('https://api.twitch.tv/helix/streams', { 'Authorization': 'Bearer nia7lttt8bnbe14u2qgb7jpftmniva', 'Client-Id': 'ux0wlqbi147fhhv3nkn8ay5cuf2ui3' }
-      ).pipe(map( (a: any) => a.data));
+      ).pipe(map( (a: any) => a.data), map( b => {
+          b.streamer = this.getUser(b);
+          return b;
+      }));
   }
 
   getUser(stream: StreamModel) {
