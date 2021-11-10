@@ -1,4 +1,6 @@
 import { Component, OnInit, VERSION } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { StreamModel } from './models/stream.model';
 import { TwitchService } from './services/twitch.service';
 
 @Component({
@@ -9,15 +11,17 @@ import { TwitchService } from './services/twitch.service';
 export class AppComponent implements OnInit  {
   name = 'Kevin Mrl- Angular ' + VERSION.major;
 
-streams: any;
+streams: StreamModel[];
 
   constructor(private readonly twitchService: TwitchService) {
 
   }
 
   ngOnInit() {
+    
+      //utiliser map
     this.twitchService.getHelixStreams().subscribe((streams: any) => {
-      this.streams = streams.data;
+      this.streams = streams;
       console.log(this.streams);
     });
   }
@@ -28,4 +32,5 @@ streams: any;
     let url = item.thumbnail_url.substring(0, lastIndexOfTiret) + item.thumbnail_url.substring(lastIndexOfPoint);
     return url;
   }
+  
 }
