@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StreamThumbnailComponent } from './stream-thumbnail/stream-thumbnail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StreamThumbnailComponent
   ],
   imports: [
     BrowserModule,
