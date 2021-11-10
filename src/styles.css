@@ -1,1 +1,10 @@
 /* Add application styles & imports to this file! */
+
+div {
+    display: inline-block;
+    margin: 10px;
+}
+
+div p {
+    max-width: 300px;
+}
