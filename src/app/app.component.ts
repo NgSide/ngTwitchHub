@@ -26,7 +26,6 @@ streams: any;
     const lastIndexOfTiret = item.thumbnail_url.lastIndexOf('-');
     const lastIndexOfPoint = item.thumbnail_url.lastIndexOf('.');
     let url = item.thumbnail_url.substring(0, lastIndexOfTiret) + item.thumbnail_url.substring(lastIndexOfPoint);
-    console.log(url);
     return url;
   }
 }
