@@ -1,3 +1,5 @@
-# angular-ivy-dneb2c
+# Ng Twitch Hub
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-ivy-dneb2c)
+## How to generate new component?
+
+`npm run add-component --name=my-component`

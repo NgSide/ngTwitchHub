@@ -7,7 +7,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "add-component": "ng g component --module=components --export components/$npm_config_name"
   },
   "dependencies": {
     "@angular/animations": "~13.0.0",
