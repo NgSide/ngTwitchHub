@@ -33,4 +33,10 @@ streams: StreamModel[];
     return url;
   }
   
+  getImgProfil(item) {
+    const lastIndexOfTiret = item.streamer.profile_image_url.lastIndexOf('-');
+    const lastIndexOfPoint = item.streamer.profile_image_url.lastIndexOf('.');
+    let url = item.streamer.profile_image_url.substring(0, lastIndexOfTiret) + item.streamer.profile_image_url.substring(lastIndexOfPoint);
+    return url;
+  }
 }

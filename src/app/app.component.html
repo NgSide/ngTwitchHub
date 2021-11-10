@@ -8,4 +8,5 @@
   <p>{{item.user_name}}</p>
   <p>{{item.game_name}}</p>
   <p>{{item.viewer_count}}</p>
+  <img *ngIf="item.streamer" width="400" height="200" [src]="getImgProfil(item)"/>
 </div>

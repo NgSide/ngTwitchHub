@@ -13,6 +13,7 @@ export class StreamModel {
     thumbnail_url: string;
     tag_ids: [string];
     is_mature: boolean;
+    streamer: StreamModel;
   
     constructor(obj: any) {
       this.id = obj.id;
