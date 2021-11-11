@@ -1,3 +1,11 @@
-p {
-  font-family: Lato;
+.streams-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 16px;
+
+  app-stream-card {
+    margin-right: 16px;
+  }
 }

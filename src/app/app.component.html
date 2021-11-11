@@ -1,4 +1,12 @@
-<h1>Hello {{ name }}</h1>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="streams-list">
+  <app-stream-card 
+    *ngFor="let stream of findStreams$ | async"
+    [streamTitle]="stream.title"
+    [thumbnail]="stream.thumbnail"
+    [viewers]="stream.viewers"
+    [broadcasterName]="stream.userName"
+    [streamCategoryName]="stream.categoryName"
+    [streamTags]="stream.tags"
+    >
+  </app-stream-card>
+</div>
