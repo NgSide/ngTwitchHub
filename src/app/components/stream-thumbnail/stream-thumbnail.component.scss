@@ -1,0 +1,50 @@
+.stream-thumbnail {
+  position: relative;
+  width: 440px;
+  height: 248px;
+
+  cursor: pointer;
+
+  &__background-image {
+    width: inherit;
+    height: inherit;
+  }
+
+  &__overlay-informations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    box-sizing: border-box;
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__status-tag {
+    border-radius: 4px;
+    padding: 1px 6px;
+    background-color: #e91916;
+    
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  &__viewers-tag {
+    border-radius: 2px;
+    padding: 1px 6px;
+    background-color:rgba(0,0,0,0.6);
+    
+    color: white;
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 12px;
+  }
+}

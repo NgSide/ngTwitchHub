@@ -1,1 +1,11 @@
-<p>stream-thumbnail works!</p>
+<div class="stream-thumbnail">
+  <img class="stream-thumbnail__background-image" [src]="url" alt="A thumbnail">
+  <div class="stream-thumbnail__overlay-informations">
+    <div class="stream-thumbnail__row">
+      <span class="stream-thumbnail__status-tag">Live</span>
+    </div>
+    <div class="stream-thumbnail__row">
+      <span class="stream-thumbnail__viewers-tag">{{viewers}} viewers</span>
+    </div>
+  </div>
+</div>
