@@ -1,1 +1,16 @@
-<p>stream-card works!</p>
+<article class="stream-card">
+  <app-stream-thumbnail class="stream-card__thumbnail" [url]="thumbnail" [viewers]="viewers"></app-stream-thumbnail>
+  <section class="stream-card__informations-section">
+    <div class="stream-card__informations-section__col">
+      <!-- <img class="stream-card__informations-section__broadcaster-image" src="https://avatars.githubusercontent.com/u/1947939?v=4" alt=""> -->
+    </div>
+    <div class="stream-card__informations-section__col">
+      <div class="stream-card__informations-section__row">{{ streamTitle }}</div>
+      <div class="stream-card__informations-section__row">{{ broadcasterName }}</div>
+      <div class="stream-card__informations-section__row">{{ streamCategoryName }}</div>
+      <div class="stream-card__informations-section__row">
+        <app-tag *ngFor="let tag of streamTags" [content]="tag"></app-tag>
+      </div>
+    </div>
+  </section>
+</article>
