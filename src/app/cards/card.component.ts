@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TwitchService } from '../services/twitch-api.service';
 
 @Component({
@@ -8,13 +8,17 @@ import { TwitchService } from '../services/twitch-api.service';
 })
 export class CardComponent implements OnInit {
 
+  @Input() viewers: number = 42;
+  @Input() thumbnail: string = '';
+  @Input() streamTitle: string = 'Bonjour Hi!';
+  @Input() broadcasterName: string = 'AlphaCat Coolcat';
+  @Input() streamCategoryName: string = 'Age of Empires IV';
+  @Input() streamTags: string[] = ['French', 'RTS'];
+  @Input() url: string ='';
+
   constructor(private twitchService: TwitchService) { }
 
   ngOnInit(): void {
-    this.getHeaders();
   }
 
-  getHeaders(): void {
-    this.twitchService.getTwitch('https://api.twitch.tv/helix/streams')
-  }
 }

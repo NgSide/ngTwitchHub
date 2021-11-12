@@ -1,1 +1,12 @@
-<app-card></app-card>>
+<div class="streams-list">
+    <!-- findStreams est l observable, le | async remplace le subscribe dans le .ts -->
+  <app-card *ngFor="let stream of findStreams$ | async"
+    [streamTitle]="stream.title"
+    [thumbnail]="stream.thumbnail"
+    [viewers]="stream.viewers"
+    [broadcasterName]="stream.userName"
+    [streamCategoryName]="stream.categoryName"
+    [streamTags]="stream.tags"
+    [url]="stream.thumbnail">
+  </app-card>
+</div>
