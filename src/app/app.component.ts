@@ -2,6 +2,7 @@ import { Observable } from 'rxjs';
 import { TwitchService } from './services/twitch-api.service';
 import { Component } from '@angular/core';
 import { OneStream } from './models/modelStream';
+import { Confirmation } from './method.decorator';
 
 @Component({
   selector: 'app-root',
@@ -20,5 +21,10 @@ export class AppComponent  {
   ngOnInit(): void {
   }
 
-
+  @Confirmation('Envoyer vos données dans le cloud?')
+  @Confirmation('Vraiment sur ?')
+  submitForm() {
+    console.log('Formulaire envoyé');
+  }
+ 
 }
