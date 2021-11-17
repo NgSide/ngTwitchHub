@@ -1,7 +1,7 @@
 <div class="container">
   <img class="container__picture" [src]="" alt="A picture of Montreal" />
   <p class="legend">
-    <span class="legend__content">{{ legendContent }}</span>
-    <span class="legend__author">{{ legendAuthor }}</span>
+    <span class="legend__content">{{ legendContent | titlecase }}</span>
+    <span class="legend__author">{{ legendAuthor | titlecase | addsource: ('Source' | uppercase) }}</span>
   </p>
 </div>
